@@ -51,11 +51,13 @@ export const ReviewsList = function ({product_id, starBarFilters}) {
   useEffect(()=> {
 
     axios({
-      url: `http://app-hrsei-api.herokuapp.com/api/fec2/hr-rfc/reviews/?page=${1}&count=${100000}&sort=${selectedSort}&product_id=${product_id}`,
+      url: `http://localhost:3000/reviews/?page=${1}&count=${100000}&sort=${selectedSort}&product_id=${product_id}`,
       method: 'get',
-      headers: {authorization: TOKEN}
+      // headers: {authorization: TOKEN}
       })
       .then((val)=> {
+        console.log('hello')
+        console.log('val',val)
         let filteredReviews = val.data.results.filter((review)=> {
           return review.body.indexOf(searchBarTerm) > -1 && starBarFilters[review.rating];
         });

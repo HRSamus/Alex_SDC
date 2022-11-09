@@ -8,4 +8,10 @@ client/dist/*.png
 client/dist/*.ttf
 *.DS_Store
 coverage
+reviews_photos.csv
+reviews.csv
+characteristic_reviews.csv
+characteristics.csv
+
+
 

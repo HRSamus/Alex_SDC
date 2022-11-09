@@ -74,8 +74,9 @@ export const ReviewTile = ({review}) => {
 
   const uploadHelpfulVote = ()=> {
     if (!helpful.voted) {
+      console.log(review.review_id)
       axios({
-        url: `http://app-hrsei-api.herokuapp.com/api/fec2/hr-rfc/reviews/${review.review_id}/helpful`,
+        url: `http://localhost:3000/reviews/${review.review_id}/helpful`,
         method: 'put',
         headers: {authorization: TOKEN}
         })

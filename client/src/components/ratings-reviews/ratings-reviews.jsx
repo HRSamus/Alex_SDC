@@ -37,11 +37,12 @@ const RatingsReviews = () => {
   useEffect(()=> {
     if(isMounted.current) {
       axios({
-        url: `http://app-hrsei-api.herokuapp.com/api/fec2/hr-rfc/reviews/meta/?product_id=${curProduct.id}`,
+        url: `http://localhost:3000/reviews/meta/?product_id=${curProduct.id}`,
         method: 'get',
         headers: {authorization: TOKEN}
         })
         .then((val)=> {
+          console.log('val',val)
           val.data.recommended.false = val.data.recommended.false || 0;
           val.data.recommended.true = val.data.recommended.true || 0;
           setstarBarFilters(defaultStarBarFilters)
