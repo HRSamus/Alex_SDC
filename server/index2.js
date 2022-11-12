@@ -17,6 +17,7 @@ app.use(express.static(path.join(__dirname, "../client/dist")));
 
 
 app.get(`/reviews/`, (req, res) => {
+  console.log('hello inside')
   const productId = req.query.product_id;
   const page = req.query.page || 1;
   const count = req.query.count || 5;
